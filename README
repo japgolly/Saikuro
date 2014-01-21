@@ -1,42 +1,25 @@
-The japgolly fork is a part of an attempt to get metric_fu working in a modern
-Ruby environment, specifically compatibility with Ruby 1.9 and Bundler.
+# Saikuro:
 
-===============================================================================
-
-Version 0.2
-
-Saikuro:
 Saikuro is a Ruby cyclomatic complexity analyzer.  When given Ruby
 source code Saikuro will generate a report listing the cyclomatic
 complexity of each method found.  In addition, Saikuro counts the
 number of lines per method and can generate a listing of the number of
 tokens on each line of code.
 
-License:
-Saikuro uses the BSD license.
+## Installation:
 
-Installation:
-Option 1: Using setup.rb
-* login as root
-* run "ruby setup.rb all"
+    gem install metric_fu-Saikuro
 
-Option 2: The manual way
-Saikuro is a single Ruby file that is executable.  You can run it where
-you unpacked it or you can move it your preferred location such as
-"/usr/local/bin" or "~/bin".
+## Usage:
 
-Note:
-Ruby 1.8.5 has a bug in ri_options that will prevent Saikuro from
-running.  If you are using 1.8.5 please apply this patch :
-http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/lib/rdoc/ri/ri_options.rb.diff?r1=1.2.2.13;r2=1.2.2.14
-
-
-Usage:
 Saikuro is a command line program.
-Running "saikuro -h" will output a usage statement describing all
+
+Running `saikuro -h` will output a usage statement describing all
 the various arguments you can pass to it.
 
-"saikuro -c -p tests/samples.rb"
+A simple example is:
+
+    saikuro -c -p examples/samples.rb
 
 The above command is a simple example that generates a cyclomatic
 complexity report on the samples.rb file, using the default filter,
@@ -44,10 +27,11 @@ warning and error settings. The report is saved in the current
 directory.
 
 
-A more detailed example is
-"saikuro -c -t -i tests -y 0 -w 11 -e 16 -o out/"
+A more detailed example is:
 
-This will analyze all Ruby files found in the "tests/" directory.
+    saikuro -c -t -i examples -y 0 -w 11 -e 16 -o detailed/
+
+This will analyze all Ruby files found in the "doc/examples/" directory.
 Saikuro will generate a token count report and a cyclomatic complexity
 report in the "out" directory .  The "-y 0" command will turn off
 filtering and thus show the complexity of all methods.  The "-w 11"
@@ -55,8 +39,15 @@ will mark all methods with a complexity of 11 or higher with a
 warning.  Finally, "-e 16" will flag all methods with a complexity of
 16 or higher with an error.
 
+## Examples:
 
-About Cyclomatic Complexity:
+In the doc/examples directory is are sample files that has examples of the
+various possible cases that we examined and documented the expected
+cyclomatic complexity result.
+
+The results of running the above commands is also included.
+
+## About Cyclomatic Complexity:
 
 The following document provides a very good and detailed description
 by the author of cyclomatic complexity.
@@ -71,8 +62,7 @@ http://hissa.nist.gov/HHRFdata/Artifacts/ITLdoc/235/title.htm
 PDF
 http://www.mccabe.com/iq_research_nist.htm
 
-
-How and what Saikuro counts to calculate the cyclomatic complexity:
+## How and what Saikuro counts to calculate the cyclomatic complexity:
 
 Saikuro uses the Simplified Complexity Calculation, which is just
 adding up the number of branch points in a method.
@@ -97,23 +87,22 @@ In addition, the short-circuiting "and" operators (&& and "and")
 currently do not contribute to a method's complexity, although
 McCabe's paper listed above suggests doing so.
 
+Example for "and" operator handling:
 
-#Example for "and" operator handling:
+    # Starting values for case 1 and 2
+    x = false
+    y = 15
+    r, q = nil
 
- # Starting values for case 1 and 2
- x = false
- y = 15
- r, q = nil
+    # case 1
+    puts "W" if ((r = x) && (q = y))
+    puts r # => false
+    puts q # => nil
 
- # case 1
- puts "W" if ((r = x) && (q = y))
- puts r # => false
- puts q # => nil
-
- # case 2
- puts "W" if ((q = y) && (r = x))
- puts r # => false
- puts q # => 15
+    # case 2
+    puts "W" if ((q = y) && (r = x))
+    puts r # => false
+    puts q # => 15
 
 Case 1 illustrates why "and" operators should add to a method's
 complexity, because the result of ( r = x ) is false the if statement
@@ -125,23 +114,32 @@ So why is it not added?
 Mainly, because we have not gotten around to it.  We are wondering if
 this would increase the noise more than it should.
 
+## Changelog:
 
-Tests:
-In the test directory is a sample file that has examples of the
-various possible cases that we examined and documented the expected
-cyclomatic complexity result.  If you find mistakes or missing tests
-please report them.
+The japgolly fork is a part of an attempt to get metric_fu working in a modern
+Ruby environment, specifically compatibility with Ruby 1.9 and Bundler.
 
-Contact:
+Version 0.2
+
+## Contact:
+
 Saikuro is written by
 Zev Blut (zb at ubit dot com)
 
-Acknowledgments:
+If you find mistakes or missing examples please report them in the issue tracker.
+
+## Acknowledgments:
+
 Thanks to Elbert Corpuz for writing the CSS for the HTML output!
 
-Other metric tools for Ruby:
+## Other metric tools for Ruby:
+
 Ryan Davis has an abc metric program as an example in his ParseTree
 product:  http://www.zenspider.com/ZSS/Products/ParseTree/
 
 The PMD project has a tool called CPD that can scan Ruby source code
 looking for source duplication:  http://pmd.sourceforge.net/
+
+## License:
+
+Saikuro uses the BSD license.

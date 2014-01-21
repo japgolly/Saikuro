@@ -1,0 +1,181 @@
+<html><head><title>Cyclometric Complexity</title></head>
+<style>
+body {
+	margin: 20px;
+	padding: 0;
+	font-size: 12px;
+	font-family: bitstream vera sans, verdana, arial, sans serif;
+	background-color: #efefef;
+}
+
+table {	
+	border-collapse: collapse;
+	/*border-spacing: 0;*/
+	border: 1px solid #666;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+table, th, th+th, td, td+td  {
+	border: 1px solid #ccc;
+}
+
+table th {
+	font-size: 12px;
+	color: #fc0;
+	padding: 4px 0;
+	background-color: #336;
+}
+
+th, td {
+	padding: 4px 10px;
+}
+
+td {	
+	font-size: 13px;
+}
+
+.class_name {
+	font-size: 17px;
+	margin: 20px 0 0;
+}
+
+.class_complexity {
+margin: 0 auto;
+}
+
+.class_complexity>.class_complexity {
+	margin: 0;
+}
+
+.class_total_complexity, .class_total_lines, .start_token_count, .file_count {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.class_total_complexity, .class_total_lines {
+	color: #c00;
+}
+
+.start_token_count, .file_count {
+	color: #333;
+}
+
+.warning {
+	background-color: yellow;
+}
+
+.error {
+	background-color: #f00;
+}
+</style>
+<body>
+<div class="class_complexity">
+<h2 class="class_name">Global : </h2>
+<div class="class_total_complexity">Total Complexity: 0</div>
+<div class="class_total_lines">Total Lines: 1</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+<tr><td>cc1</td><td>1</td><td>2</td></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Class : CylcoIfTestClass</h2>
+<div class="class_total_complexity">Total Complexity: 15</div>
+<div class="class_total_lines">Total Lines: 59</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+<tr><td>cc2</td><td>2</td><td>7</td></tr>
+<tr><td>cc3</td><td>3</td><td>8</td></tr>
+<tr><td>cc3_2</td><td>3</td><td>10</td></tr>
+<tr><td>cc2_2</td><td>2</td><td>4</td></tr>
+<tr><td>cc2_2</td><td>2</td><td>6</td></tr>
+<tr><td>cc2_ternary</td><td>2</td><td>2</td></tr>
+<tr><td>cc1?</td><td>1</td><td>2</td></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Class : CycloException</h2>
+<div class="class_total_complexity">Total Complexity: 0</div>
+<div class="class_total_lines">Total Lines: 0</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Class : CycloUnlessTestClass</h2>
+<div class="class_total_complexity">Total Complexity: 6</div>
+<div class="class_total_lines">Total Lines: 25</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+<tr><td>cc2</td><td>2</td><td>7</td></tr>
+<tr><td>cc2_2</td><td>2</td><td>6</td></tr>
+<tr><td>cc2_3</td><td>2</td><td>4</td></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Class : CycloDefTestClass</h2>
+<div class="class_total_complexity">Total Complexity: 7</div>
+<div class="class_total_lines">Total Lines: 28</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+<tr><td>cc3</td><td>3</td><td>6</td></tr>
+<tr><td>cc2</td><td>2</td><td>8</td></tr>
+<tr><td>self.classm1_cc1</td><td>1</td><td>2</td></tr>
+<tr><td>CycloDefTestClass.classm2_cc1</td><td>1</td><td>2</td></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Module : CycloTestModule</h2>
+<div class="class_total_complexity">Total Complexity: 21</div>
+<div class="class_total_lines">Total Lines: 88</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+<tr><td>cc4_case</td><td>4</td><td>13</td></tr>
+<tr><td>while1_cc2</td><td>2</td><td>7</td></tr>
+<tr><td>while2_cc2</td><td>2</td><td>4</td></tr>
+<tr><td>while3_cc2</td><td>2</td><td>6</td></tr>
+<tr><td>while4_cc3</td><td>2</td><td>7</td></tr>
+<tr><td>for_cc2</td><td>2</td><td>6</td></tr>
+<tr><td>for2_cc2</td><td>2</td><td>6</td></tr>
+<tr><td>block_cc2</td><td>2</td><td>6</td></tr>
+<tr><td>block2_cc2</td><td>2</td><td>4</td></tr>
+<tr><td>hash_cc1</td><td>1</td><td>2</td></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Module : CycloTestModule2</h2>
+<div class="class_total_complexity">Total Complexity: 0</div>
+<div class="class_total_lines">Total Lines: 4</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Class : CycloTestModule2::CycloUntilTestClass</h2>
+<div class="class_total_complexity">Total Complexity: 8</div>
+<div class="class_total_lines">Total Lines: 35</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+<tr><td>until_cc2</td><td>2</td><td>7</td></tr>
+<tr><td>until2_cc2</td><td>2</td><td>4</td></tr>
+<tr><td>until3_cc2</td><td>2</td><td>6</td></tr>
+<tr><td>until4_cc2</td><td>2</td><td>7</td></tr>
+</table>
+</div>
+<div class="class_complexity">
+<h2 class="class_name">Class : SyntaxTests</h2>
+<div class="class_total_complexity">Total Complexity: 9</div>
+<div class="class_total_lines">Total Lines: 47</div>
+<table width="100%" border="1">
+<tr><th>Method</th><th>Complexity</th><th># Lines</th></tr>
+<tr><td>here_docs_cc1</td><td>1</td><td>3</td></tr>
+<tr><td>SyntaxTests::colon_method_cc1</td><td>1</td><td>2</td></tr>
+<tr><td>symbol_test_cc1</td><td>1</td><td>4</td></tr>
+<tr><td>hash_with_hash1</td><td>1</td><td>6</td></tr>
+<tr><td>hash_with_block_inside1</td><td>2</td><td>7</td></tr>
+<tr><td>hash_with_block_inside2</td><td>3</td><td>9</td></tr>
+</table>
+</div>
+</body>
+</html>
